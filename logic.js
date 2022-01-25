@@ -14,8 +14,11 @@ requestAnimationFrame(async () => {
   }
 
   document.querySelector('#id').addEventListener('click', async () => {
-    alert(navigator.canShare)
-    await navigator.share(shareData)
+    try {
+      await navigator.share(shareData)
+    } catch {
+      
+    }
   });
   document.querySelector('#id').innerHTML = '#' + id;
   document.querySelector('#quote').innerHTML = quote;
